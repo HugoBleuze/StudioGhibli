@@ -1,14 +1,13 @@
 package com.example.studioghibli.View;
 
 
-
 import java.util.List;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.content.Intent;
-import com.example.studioghibli.Model.Films;
+
 
 import android.widget.TextView;
 
@@ -19,45 +18,46 @@ import android.content.Context;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> {
-    private List<Films> values;
+public class PersosAdapter extends RecyclerView.Adapter<PersosAdapter.ViewHolder> {
+    private List<Persos> valuesP;
 
     private Context context;
-    public static final String Id_Films = "idFilm";
+    public static final String Id_Persos = "idPeople";
 
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView Title;
+        public TextView Name;
         public View layout;
 
 
         public ViewHolder(View v) {
             super(v);
             layout = v;
-            Title = v.findViewById(R.id.firstLine);
+            Name = v.findViewById(R.id.firstLineP);
 
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public FilmsAdapter(List<Films> myDataset) {
-        values = myDataset;
+    public PersosAdapter(List<Persos> myDatasetP) {
+        valuesP = myDatasetP;
     }
 
 
     // Create new views (invoked by the layout manager)
     @Override
-    public FilmsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public PersosAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                       int viewType) {
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
         View v =
-                inflater.inflate(R.layout.row_layout, parent, false);
+                inflater.inflate(R.layout.row_layout_p, parent, false);
         // set the view's size, margins, paddingrow_layouts and layout parameters
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -68,16 +68,16 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final Films currentMovie = values.get(position);
+        final Persos currentPersos = valuesP.get(position);
 
-        holder.Title.setText(currentMovie.getTitle());  //Movie.getTitle
-        holder.Title.setOnClickListener(new OnClickListener() {
+        holder.Name.setText(currentPersos.getName());
+        holder.Name.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent randomIntent = new Intent(context, DetailActivity.class);
-                randomIntent.putExtra(Id_Films, currentMovie.getId());
+                randomIntent.putExtra(Id_Persos, currentPersos.getId());
                 context.startActivity(randomIntent);
             }
         });
@@ -88,7 +88,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return values.size();
+        return valuesP.size();
     }
 
 }
