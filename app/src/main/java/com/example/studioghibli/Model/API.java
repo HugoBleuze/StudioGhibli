@@ -14,4 +14,7 @@ public interface API {
     @GET("films")
     Call<List<Films>> getListFilms();
 
+    @GET("people")
+    Call<List<Persos>> getListPersos();
+
 }
