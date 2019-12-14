@@ -76,7 +76,7 @@ public class PersosAdapter extends RecyclerView.Adapter<PersosAdapter.ViewHolder
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Intent randomIntent = new Intent(context, DetailActivity.class);
+                Intent randomIntent = new Intent(context, DetailPActivity.class);
                 randomIntent.putExtra(Id_Persos, currentPersos.getId());
                 context.startActivity(randomIntent);
             }

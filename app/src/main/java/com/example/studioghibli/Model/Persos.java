@@ -11,8 +11,8 @@ public class Persos {
     private String name;
     private String gender;
     private String age;
-    private String eyeColor;
-    private String hairColor;
+    private String eye_color;
+    private String hair_color;
     private List<String> films = null;
     private String species;
     private String url;
@@ -51,19 +51,19 @@ public class Persos {
     }
 
     public String getEyeColor() {
-        return eyeColor;
+        return eye_color;
     }
 
     public void setEyeColor(String eyeColor) {
-        this.eyeColor = eyeColor;
+        this.eye_color = eye_color;
     }
 
     public String getHairColor() {
-        return hairColor;
+        return hair_color;
     }
 
     public void setHairColor(String hairColor) {
-        this.hairColor = hairColor;
+        this.hair_color = hair_color;
     }
 
     public List<String> getFilms() {

@@ -21,4 +21,6 @@ public interface API {
     @GET("people")
     Call<List<Persos>> getListPersos();
 
+    @GET("people/{id}")
+    Call<Persos> getPDetail(@Path("id") String id);
 }

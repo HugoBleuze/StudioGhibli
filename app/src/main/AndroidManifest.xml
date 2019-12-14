@@ -22,6 +22,9 @@
         <activity android:name=".View.DetailActivity">
 
         </activity>
+        <activity android:name=".View.DetailPActivity">
+
+        </activity>
     </application>
 
 </manifest>
