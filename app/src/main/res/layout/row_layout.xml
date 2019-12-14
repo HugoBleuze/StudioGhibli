@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
+    android:layout_height="40dp"
     android:padding="6dip" >
 
     <TextView
@@ -12,6 +12,7 @@
         android:layout_marginLeft="10dp"
         android:gravity="center_vertical"
         android:text="Example application"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:fontFamily="@font/overlock"/>
 
 </RelativeLayout>
