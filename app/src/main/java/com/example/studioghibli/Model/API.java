@@ -7,12 +7,16 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 
 public interface API {
 
     @GET("films")
     Call<List<Films>> getListFilms();
+
+    @GET("films/{id}")
+    Call<Films> getDetail(@Path("id") String id);
 
     @GET("people")
     Call<List<Persos>> getListPersos();
