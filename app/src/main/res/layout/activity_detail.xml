@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="false"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="TextView"
+        android:textSize="36sp"
+        app:fontFamily="@font/overlock" />
+
+    <TextView
+        android:id="@+id/Direct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="Director : "
+        app:fontFamily="@font/overlock" />
+
+    <TextView
+        android:id="@+id/Director"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16dp"
+        android:text="TextView"
+        app:fontFamily="@font/overlock" />
+
+    <TextView
+        android:id="@+id/Produc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Producer : "
+        android:textSize="16dp"
+        app:fontFamily="@font/overlock"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/Producer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="16dp"
+        app:fontFamily="@font/overlock"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <TextView
+        android:id="@+id/Release"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Release date :"
+        android:textSize="16dp"
+        app:fontFamily="@font/overlock"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="16dp"
+        app:fontFamily="@font/overlock"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/Summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Summary : "
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/overlock" />
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="10dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:fontFamily="@font/overlock"
+
+        />
+
+</LinearLayout>

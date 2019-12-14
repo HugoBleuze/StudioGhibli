@@ -1,52 +1,49 @@
 package com.example.studioghibli.View;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.example.studioghibli.Controller.DetailController;
 import com.example.studioghibli.R;
-import com.example.studioghibli.View.DashboardFragment;
-import com.example.studioghibli.View.HomeFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    DetailActivity.this.showFragment(new HomeFragment());
-                    return true;
-                case R.id.navigation_dashboard:
-                    DetailActivity.this.showFragment(new DashboardFragment());
-                    return true;
+    public DetailActivity() {}
+    private DetailController detailController;
 
-            }
-            return false;
-        }
-    };
+    public String idFilms = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_detail);
 
-        BottomNavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        showFragment(new HomeFragment());
+        Intent intent = getIntent();
+        this.idFilms = intent.getStringExtra(FilmsAdapter.Id_Films);
+        detailController = new DetailController(this);
+        detailController.onCreate();
     }
 
-    private void showFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment, fragment)
-                .commit();
+    public void showDetail(String Description, String Name, String Director, String Producer, String Date) {
+        TextView TitleTxt = findViewById(R.id.Name);
+        TitleTxt.setText(Name);
+
+        TextView DirectorTxt = findViewById(R.id.Director);
+        DirectorTxt.setText(Director);
+
+        TextView ProducerTxt = findViewById(R.id.Producer);
+        ProducerTxt.setText(Producer);
+
+        TextView DateTxt = findViewById(R.id.Date);
+        DateTxt.setText(Date);
+
+        TextView DescriptionTxt = findViewById(R.id.Description);
+        DescriptionTxt.setText(Description);
+
+
     }
 }

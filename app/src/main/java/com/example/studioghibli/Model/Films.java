@@ -12,7 +12,7 @@ public class Films {
     private String description;
     private String director;
     private String producer;
-    private String releaseDate;
+    private String release_date;
     private String rtScore;
     private List<String> people = null;
     private List<String> species = null;
@@ -62,11 +62,7 @@ public class Films {
     }
 
     public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+        return release_date;
     }
 
     public String getRtScore() {

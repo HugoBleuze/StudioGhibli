@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.studioghibli.Model.API;
 import com.example.studioghibli.Model.Films;
+import com.example.studioghibli.View.DetailActivity;
 import com.example.studioghibli.View.HomeFragment;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -19,11 +20,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DetailController {
 
-    private HomeFragment activity;
+    private DetailActivity activity;
     private Gson gson;
     static final String BASE_URL = "https://ghibliapi.herokuapp.com/";
 
-    public DetailController(HomeFragment activity) { this.activity = activity;}
+    public DetailController(DetailActivity activity) { this.activity = activity;}
 
     public void onCreate() {
         gson = new GsonBuilder()
@@ -37,20 +38,25 @@ public class DetailController {
 
         API restAPI = retrofit.create(API.class);
 
-        Call<List<Films>> call = restAPI.getListFilms();
+        Call<Films> call = restAPI.getDetail(activity.idFilms);
 
-        call.enqueue(new Callback<List<Films>>() {
+        call.enqueue(new Callback<Films>() {
             @Override
-            public void onResponse(Call<List<Films>> call, Response<List<Films>> response) {
-                List<Films> restListResponse = response.body();
+            public void onResponse(Call<Films> call, Response<Films> response) {
+                Films restDetailResponse = response.body();
+                String Description = restDetailResponse.getDescription();
+                String Name = restDetailResponse.getTitle();
+                String Director = restDetailResponse.getDirector();
+                String Producer = restDetailResponse.getProducer();
+                String Date = restDetailResponse.getReleaseDate();
+                //appels.....
 
-
-                activity.showList(restListResponse);
+                activity.showDetail(Description, Name, Director, Producer, Date);
 
             }
 
             @Override
-            public void onFailure(Call<List<Films>> call, Throwable t) {
+            public void onFailure(Call<Films> call, Throwable t) {
                 Log.d("ERREUR", call+""+t);
             }
         });
